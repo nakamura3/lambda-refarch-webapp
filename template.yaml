@@ -140,10 +140,7 @@ Resources:
       CodeUri: todo-src/getTodo
       Handler: app.getToDoItem
       Tracing: Active
-      Policies:
-        - DynamoDBReadPolicy:
-            TableName: !Ref TodoTable
-        - CloudWatchPutMetricPolicy: {}
+      Role: arn:aws:iam::102249488226:role/General_Lambda_Role
       Environment:
         Variables:
           TABLE_NAME: !Ref TodoTable
@@ -167,10 +164,7 @@ Resources:
       CodeUri: todo-src/getAllTodo
       Handler: app.getAllToDoItem
       Tracing: Active
-      Policies:
-        - DynamoDBReadPolicy:
-            TableName: !Ref TodoTable
-        - CloudWatchPutMetricPolicy: {}
+      Role: arn:aws:iam::102249488226:role/General_Lambda_Role
       Environment:
         Variables:
           TABLE_NAME: !Ref TodoTable
@@ -193,10 +187,7 @@ Resources:
         CodeUri: todo-src/completeTodo/
         Handler: app.completeToDoItem
         Tracing: Active
-        Policies:
-          - DynamoDBCrudPolicy:
-              TableName: !Ref TodoTable
-          - CloudWatchPutMetricPolicy: {}
+        Role: arn:aws:iam::102249488226:role/General_Lambda_Role
         Environment:
           Variables:
             TABLE_NAME: !Ref TodoTable
@@ -219,10 +210,7 @@ Resources:
       CodeUri: todo-src/addTodo/
       Handler: app.addToDoItem
       Tracing: Active
-      Policies:
-        - DynamoDBCrudPolicy:
-            TableName: !Ref TodoTable
-        - CloudWatchPutMetricPolicy: {}
+      Role: arn:aws:iam::102249488226:role/General_Lambda_Role
       Environment:
         Variables:
           TABLE_NAME: !Ref TodoTable
@@ -245,10 +233,7 @@ Resources:
         CodeUri: todo-src/updateTodo/
         Handler: app.updateToDoItem
         Tracing: Active
-        Policies:
-          - DynamoDBCrudPolicy:
-              TableName: !Ref TodoTable
-          - CloudWatchPutMetricPolicy: {}
+        Role: arn:aws:iam::102249488226:role/General_Lambda_Role
         Environment:
           Variables:
             TABLE_NAME: !Ref TodoTable
@@ -269,10 +254,7 @@ Resources:
       CodeUri: todo-src/deleteTodo
       Handler: app.deleteToDoItem
       Tracing: Active
-      Policies:
-        - DynamoDBCrudPolicy:
-            TableName: !Ref TodoTable
-        - CloudWatchPutMetricPolicy: {}
+      Role: arn:aws:iam::102249488226:role/General_Lambda_Role
       Environment:
         Variables:
           TABLE_NAME: !Ref TodoTable
@@ -326,14 +308,8 @@ Resources:
                 - amplify.amazonaws.com
             Action:
               - sts:AssumeRole
-      Policies:
-        - PolicyName: Amplify
-          PolicyDocument:
-            Version: 2012-10-17
-            Statement:
-              - Effect: Allow
-                Action: "amplify:*"
-                Resource: "*"
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AdministratorAccess-Amplify
 
   AmplifyApp:
     Type: "AWS::Amplify::App"
