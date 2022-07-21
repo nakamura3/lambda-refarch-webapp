@@ -150,9 +150,9 @@ function App() {
         <Jumbotron>
           <Row>
             <Col md="6" className="logo">
-              <h1>サーバーレス INES Todo</h1>
-              <p>AWS のサーバーレス アーキテクチャのサンプル アプリです。</p>
-              <p>The application is built using the SAM CLI toolchain, and uses AWS Lambda, Amazon DynamoDB, and Amazon API Gateway for API services and Amazon Cognito for identity.</p>
+              <h1>アイネス Todo</h1>
+              <p>サーバーレス アーキテクチャのサンプル アプリです。</p>
+              <p>このアプリケーションは SAM CLI ツールを使用してビルドしました。フロントエンドは Reactで作成し、バックエンドは AWS Lambda、Amazon DynamoDB、Amazon API Gateway を用い、認証機能は Amazon Cognite を使用しています。</p>
 
               <img src={logo} alt="Logo" />
             </Col>
