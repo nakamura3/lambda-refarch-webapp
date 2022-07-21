@@ -150,8 +150,8 @@ function App() {
         <Jumbotron>
           <Row>
             <Col md="6" className="logo">
-              <h1>Serverless INES Todo</h1>
-              <p>This is a demo that showcases AWS serverless.</p>
+              <h1>サーバーレス INES Todo</h1>
+              <p>AWS のサーバーレス アーキテクチャのサンプル アプリです。</p>
               <p>The application is built using the SAM CLI toolchain, and uses AWS Lambda, Amazon DynamoDB, and Amazon API Gateway for API services and Amazon Cognito for identity.</p>
 
               <img src={logo} alt="Logo" />
